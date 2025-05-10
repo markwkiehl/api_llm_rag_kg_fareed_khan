@@ -1,16 +1,3 @@
-#
-#   Written by:  Mark W Kiehl
-#   http://mechatronicsolutionsllc.com/
-#   http://www.savvysolutions.info/savvycodesolutions/
-#
-
-
-# Define the script version in terms of Semantic Versioning (SemVer)
-# when Git or other versioning systems are not employed.
-__version__ = "0.0.0"
-from pathlib import Path
-print("'" + Path(__file__).stem + ".py'  v" + __version__)
-
 
 # -----------------------------------------------------------------------------------------------------------
 import os
