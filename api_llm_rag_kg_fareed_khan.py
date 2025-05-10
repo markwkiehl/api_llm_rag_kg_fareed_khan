@@ -12,27 +12,15 @@ from pathlib import Path
 print("'" + Path(__file__).stem + ".py'  v" + __version__)
 
 
-# Add path 'savvy' so it can be found for library imports
-from pathlib import Path
-import sys
-sys.path.insert(1, str(Path(Path.cwd().parent).joinpath("savvy")))      
-
-
-from savvy_secrets import api_secrets
-if not "api_openai" in api_secrets.keys(): raise Exception("ERROR: api_secrets from savvy_secrets.py doesn't have the key requested.")
-# 'api_openai': ['na','OpenAI_api_key', 'organization', 'project'],
-OPENAI_API_KEY = api_secrets['api_openai'][1]
-OPENAI_ORG = api_secrets['api_openai'][2]
-OPENAI_PROJ = api_secrets['api_openai'][3]
+# -----------------------------------------------------------------------------------------------------------
 import os
+OPENAI_API_KEY = "your OpenAI API key"
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
-from savvy_secrets import api_secrets
-if not "api_openrouter" in api_secrets.keys(): raise Exception("ERROR: api_secrets from savvy_secrets.py doesn't have the key requested.")
-OPENROUTER_API_KEY = api_secrets['api_openrouter'][1]
-#print("OPENROUTER_API_KEY:", OPENROUTER_API_KEY)
-import os
+# I used OpenRouter.ai rather than OpenAI, but you can easily convert it back to OpenAI
+OPENROUTER_API_KEY = "your OpenRouter API key"
 os.environ["OPENROUTER_API_KEY"] = OPENROUTER_API_KEY
+# -----------------------------------------------------------------------------------------------------------
 
 
 """
